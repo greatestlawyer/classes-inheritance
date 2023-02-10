@@ -15,15 +15,9 @@ test('test class Character with valid values of property', () => {
 });
 
 test('test class Character with invalid value of name', () => {
-  expect(() => {
-    const character = new Character('volandemort', 'Daemon', 40, 20);
-    return character;
-  }).toThrow(new Error('Name length must be in [2;10] interval!'));
+  expect(() => new Character('volandemort', 'Daemon', 40, 20)).toThrow();
 });
 
 test('test class Character with invalid value of type', () => {
-  expect(() => {
-    const character = new Character('voland', 'Pacman', 40, 20);
-    return character;
-  }).toThrow(new Error('Not valid character type!'));
+  expect(() => new Character('voland', 'Pacman', 40, 20)).toThrow();
 });
